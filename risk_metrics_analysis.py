@@ -9,6 +9,7 @@ from max_drawdown import Max_Drawdown
 
 #Daily log returns for ETFs 
 etf_log_returns = np.log(etf_df/etf_df.shift(1))
+etf_log_returns.index=pd.to_datetime(etf_log_returns.index, format='mixed', dayfirst=True)
 #Daily log returns for main asset classes 
 asset_log_returns=np.log(main_asset_df_aligned/main_asset_df_aligned.shift(1))
 

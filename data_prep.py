@@ -16,9 +16,10 @@ main_asset_df = main_asset_df.iloc[1:]
 
 
 #Data MYSTERY ALLLOCATIONS 
-mystery_asset_one_df=pd.read_csv("Mystery Allocation 1.csv", header =0 , index_col= 0, parse_dates=True)
-mystery_asset_two_df=pd.read_csv("Mystery Allocation 2.csv", header =0, index_col= 0, parse_dates=True)
-
+mystery_allocation_one_df=pd.read_csv("Mystery Allocation 1.csv", sep=',' header= None,index_col= 0, parse_dates=[0])
+#print(mystery_allocation_one_df.shape)
+mystery_alllocation_two_df=pd.read_csv("Mystery Allocation 2.csv",header=None,  index_col= 0, parse_dates=[0])
+#print(mystery_alllocation_two_df.shape)
 #PERIOD SPANNED BY ETF AND MAIN ASSET CLASSES
 etf_df["Dates"]=pd.to_datetime(etf_df["Dates"], dayfirst= True)
 etf_df=etf_df.set_index("Dates")
